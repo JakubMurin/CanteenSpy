@@ -1,0 +1,764 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+:root {
+    --yellow: #FFC700;
+    --red: #EE3E38;
+    --light-red: #FFF2F2;
+    --light-grey: #E0E0E0;
+    --dark-grey: #8A8A8A;
+    --available-bg: #E9FFDE;
+    --unavailable-bg: #FFDEDE;
+    --available-btn: #98DB8D;
+    --unavailable-btn: #DB8D8D
+}
+* {
+    font-family: 'Verdana', sans-serif;
+}
+body {
+    background-color: #E0E0E0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+.filter-box {
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    margin: 20px auto 0px auto;
+    -webkit-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+}
+.filter-box > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.filter-button {
+    border: 1px solid #C9C9C9;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: black;
+}
+.filter-button.active {
+    background-color: var(--light-red);
+    border: 1px solid var(--red);
+}
+.filter-box hr {
+    border: 0.5px solid #C9C9C9;
+    margin: 20px 0;
+}
+.canteens-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+.canteen-href {
+    display: flex;
+    width: 33.3%;
+    justify-content: center;
+}
+.canteen-box {
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 1)), url('@/assets/images/eat&meat.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 10px 0px 10px;
+    width: -webkit-fill-available;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 200px;
+    -webkit-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+}
+.canteen-box p {
+    margin: 0;
+}
+.canteen-box > p {
+    margin-bottom: 45px;
+}
+.canteen-box h2 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 30px;
+}
+.canteen-box img {
+    height: 20px;
+}
+.canteen-box .flex-box {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.header2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('@/assets/images/eat&meat.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.header2 .back-button {
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.header2 .back-button img {
+    width: 30px;
+    cursor: pointer;
+}
+.header2 h1 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    padding: 130px 0;
+    font-size: 50px;
+}
+.flex-comments {
+    display: flex;
+}
+.alergens-box {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    margin: 0;
+}
+.alergens-box ol {
+    padding-left: 30px;
+}
+#alergens-content {
+    display: block;
+}
+.toggle-alergens h3 {
+    margin: 0;
+    text-align: center;
+}
+.toggle-alergens img {
+    display: none;
+}
+.toggle-alergens {
+    display: flex;
+    pointer-events: none;
+    justify-content: space-between;
+    align-items: center;
+}
+.comments-form-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 70%;
+    margin: 40px;
+    -webkit-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+}
+.menu-box {
+    background-color: white;
+    padding: 0 30px 20px 30px;
+    border-radius: 20px;
+    width: 70%;
+    margin: 40px;
+    -webkit-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+}
+.menu-date h3 {
+    margin-bottom: 10px;
+}
+.comments-form-box > h3 {
+    text-align: center;
+    margin: 0;
+    margin-top: 10px;
+}
+.comments-form-box > p {
+    text-align: center;
+    margin: 10px 0;
+}
+.comments-box {
+    border: 1px solid #7A7A7A;
+}
+.comments-box h3 {
+    text-align: center;
+    border-bottom: 1px solid #7A7A7A;
+    margin: 0 10px;
+    padding: 10px 0;
+}
+.comments-scroll {
+    padding: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+.comment-box {
+    background-color: #E4E4E4;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.comment-box p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.message-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.message-flex em {
+    font-size: 12px;
+    color: #7A7A7A;
+}
+.comment-box .arrow {
+    height: 20px;
+    width: 20px;
+    background-color: #E4E4E4;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 0px;
+    bottom: -10px;
+    left: 20px;
+    z-index: 0;
+}
+.comment-input {
+    resize: none;
+    width: -webkit-fill-available;
+    padding: 10px;
+    border: 1px solid #7A7A7A;
+}
+.comment-submit {
+    border: 0.5px solid black;
+    background-color: #FFC700;
+    padding: 10px 30px;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto 5px auto;
+    color: black;
+}
+.stars-input {
+    margin: 20px 0;
+}
+.stars-input .vue-star-rating[data-v-f675a548] {
+    justify-content: center;
+}
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    padding: 20 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img {
+    height: 70px;
+    margin: auto 0;
+}
+.language-button button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+.language-button img {
+    height: 25px;
+    width: 25px;
+    border: var(--light-grey) 1px solid;
+    border-radius: 100%;
+}
+footer {
+    background-color: #ffffff;
+    border-top: 0.5px solid #e0e0e0;
+}
+footer p {
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
+    padding: 5px 0;
+}
+.canteen-detail {
+    display: flex;
+    flex-direction: column;
+}
+.canteen-banner {
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('@/assets/images/eat&meat.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.canteen-background {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: contrast(0.9) brightness(0.5);
+}
+.canteen-name {
+    color: white;
+    font-size: 20px;
+}
+.back-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 60px;
+    left: 10px;
+    background-color: white;
+    border-radius: 100%;
+    cursor: pointer;
+    font-size: 28px;
+    -webkit-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+}
+.canteen-content {
+    display: flex;
+    padding: 0;
+}
+.canteen-contacts {
+    width: 30%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-arrow {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+.menu-date {
+    text-align: center;
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+.menu-date h3 {
+    margin: 0;
+    width: 200px;
+}
+.menu-date p {
+    font-size: 14px;
+    margin: 0;
+}
+.opening-hours-box {
+    height: fit-content;
+    background: white;
+    pointer-events: all;
+    padding: 20px;
+}
+#opening-hours-content {
+    margin-top: 15px;
+    display: block;
+}
+.opening-hours-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.opening-hours-dropdown h3 {
+    margin: 0;
+}
+.opening-hours-dropdown img {
+    display: none;
+}
+.opening-hours-day-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.opening-hours-day-detail p {
+    margin: 5px 0;
+}
+.opening-hours-details {
+  display: none;
+}
+.opening-hours-details.show {
+  display: block;
+}
+.opening-hours-box ul {
+    list-style: none;
+    margin: 0;
+}
+.social-links-box {
+    display: flex;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
+}
+.social-link {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-link img {
+    width: 25px;
+    height: 25px;
+}
+.item-box-available {
+    border: 1px solid black;
+    margin: 15px 0px;
+    display: flex;
+    background: var(--available-bg);
+}
+.item-box-unavailable {
+    border: 1px solid black;
+    margin: 15px 0px;
+    display: flex;
+    background: var(--unavailable-bg);
+}
+.item-availability {
+    width: 25px;
+    border-right: 1px solid var(--dark-grey);
+    color: var(--dark-grey);
+    position: relative;
+    padding: 0 10px;
+}
+.item-availability p {
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.item-info {
+    width: -webkit-fill-available;
+}
+.item-name {
+    padding: 0px 10px;
+    text-align: start;
+    color: black;
+    margin: 0;
+    margin-top: 10px;
+}
+.item-price-rating {
+    text-align: right;
+    border-bottom: 1px solid black;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.item-price-rating p {
+    margin: 0;
+    color: black;
+}
+.item-mark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-mark p {
+    padding-left: 10px;
+}
+.item-mark-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.item-mark-buttons button {
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: 0px 5px;
+    width: 60px;
+    height: 30px;
+    color: black;
+}
+.item-mark-buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.mark-available {
+    background: var(--available-btn);
+}
+.mark-unavailable {
+    background: var(--unavailable-btn);
+}
+.item-voting-results {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--dark-grey);
+    color: var(--dark-grey);
+    justify-content: space-between;
+    align-items: center;
+}
+.item-voting-results p {
+    margin: 10px;
+    text-wrap: nowrap;
+}
+.item-counter {
+    display: flex;
+    align-items: center;
+}
+.item-result-number {
+    display: flex;
+}
+.item-result-number img {
+    fill: var(--dark-grey);
+}
+
+@media (max-width: 1200px) {
+    .canteen-href {
+        width: 50%;
+    }
+    .alergens-box {
+        width: 40%;
+    }
+    .comments-form-box {
+        width: 60%;
+    }
+    .menu-box {
+        width: 60%;
+    }
+    .canteen-contacts {
+        width: 40%;
+    }
+}
+@media (max-width: 1000px) {
+    .flex-comments {
+        flex-direction: column;
+    }
+    .comments-form-box {
+        width: -webkit-fill-available;
+        margin: 20px 20px 0px 20px;
+    }
+    .menu-box {
+        width: -webkit-fill-available;
+        margin: 20px 20px 0px 20px;
+    }
+    .alergens-box {
+        width: -webkit-fill-available;
+        margin: 20px 20px 0px 20px;
+        border-radius: 20px;
+        -webkit-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+        box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    }
+    .canteen-contacts {
+        width: -webkit-fill-available;
+        background-color: transparent;
+    }
+    footer {
+        margin-top: 20px;
+    }
+    .toggle-alergens {
+        pointer-events: all;
+        cursor: pointer;
+    }
+    .opening-hours-box {
+        pointer-events: all;
+        cursor: pointer;
+    }
+    #alergens-content {
+        display: none;
+    }
+    .toggle-alergens img {
+        display: block;
+    }
+    .opening-hours-dropdown img {
+        display: block;
+    }
+    .canteen-content {
+        flex-direction: column;
+    }
+    #opening-hours-content {
+        display: none;
+    }
+    .opening-hours-box {
+        width: -webkit-fill-available;
+        border-radius: 20px;
+        margin: 20px 20px 0px 20px;
+        -webkit-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+        box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    }
+    .social-links-box {
+        border-radius: 20px;
+        width: -webkit-fill-available;
+        background: white;
+        margin: 20px 20px 0px 20px;
+        -webkit-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+        box-shadow: 0px 6px 17px -7px rgba(0,0,0,0.75);
+    }
+}
+@media (max-width: 850px) {
+    .canteens-box {
+        flex-direction: column;
+    }
+    .canteen-href {
+        width: 100%;
+    }
+}
+@media (max-width: 500px) {
+    .item-voting-results {
+        font-size: 12px;
+    }
+    div:where(.swal2-container) .swal2-html-container {
+        font-size: 12px !important;
+    }
+    div:where(.swal2-container) h2:where(.swal2-title) {
+        font-size: 15px !important;
+    }
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+        font-size: 12px !important;
+    }
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
+        font-size: 12px !important;
+    }
+    .item-box-available {
+        font-size: 12px;
+    }
+    .item-box-unavailable {
+        font-size: 12px;
+    }
+    .item-voting-results {
+        font-size: 10px;
+    }
+    .opening-hours-box p {
+        font-size: 12px;
+    }
+    .opening-hours-box h3 {
+        font-size: 14px;
+    }
+    .menu-date h3 {
+        font-size: 14px;
+    }
+    .menu-date p {
+        font-size: 10px;
+    }
+    div:where(.swal2-container) .swal2-html-container {
+        font-size: 12px !important;
+    }
+    div:where(.swal2-container) h2:where(.swal2-title) {
+        font-size: 15px !important;
+    }
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+        font-size: 12px !important;
+    }
+    div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
+        font-size: 12px !important;
+    }
+    .filter-box {
+        width: -webkit-fill-available;
+        margin: 10px 10px 0px 10px;
+        padding: 10px;
+    }
+    .filter-box hr {
+        margin: 10px 0;
+    }
+    .filter-button {
+        font-size: 12px;
+    }
+    .header {
+        height: 50px;
+    }
+    .language-button button {
+        right: 25px;
+        top: 10px;
+    }
+    .canteen-box p {
+        font-size: 12px;
+    }
+    .canteen-box {
+        margin: 10px 0px 0px 0px;
+        width: -webkit-fill-available;
+        height: 130px;
+    }
+    .canteen-box > p {
+        margin-bottom: 25px;
+    }
+    .header2 h1 {
+        font-size: 30px;
+        padding: 90px 0;
+    }
+    .comments-form-box > h3 {
+        font-size: 14px;
+    }
+    .comments-form-box > p {
+        font-size: 12px;
+    }
+    .comments-box h3 {
+        font-size: 14px;
+    }
+    .comments-form-box {
+        padding: 10px;
+        margin: 10px 10px 0px 10px;
+    }
+    .menu-box {
+        padding: 10px;
+        margin: 10px 10px 0px 10px;
+    }
+    .comment-box p {
+        font-size: 12px;
+    }
+    .message-flex em {
+        font-size: 10px;
+    }
+    .comment-input {
+        font-size: 12px;
+    }
+    .comment-submit {
+        font-size: 12px;
+    }
+    .toggle-alergens h3 {
+        font-size: 14px;
+    }
+    .alergens-box {
+        padding: 10px 20px;
+        margin: 10px 10px 0px 10px;
+    }
+    .alergens-box ol {
+        font-size: 12px;
+    }
+    footer {
+        margin-top: 10px;
+    }
+    .logo img {
+        height: 50px;
+    }
+    .item-availability {
+        padding: 0;
+    }
+    .opening-hours-box {
+        margin: 10px 10px 0px 10px;
+        padding: 10px 20px;
+    }
+    .social-links-box {
+        margin: 10px 10px 0px 10px;
+    }
+}
